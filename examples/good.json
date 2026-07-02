@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/me/projects"]
+    },
+    "fetch": {
+      "command": "node",
+      "args": ["./servers/fetch.js"]
+    },
+    "remote-search": {
+      "type": "http",
+      "url": "https://example.com/mcp"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "mcp-doctor",
+  "version": "1.0.0",
+  "description": "Diagnose Model Context Protocol (MCP) server config files — validates Claude Desktop, Claude Code, Cursor, VS Code, Windsurf and generic mcp.json files, checks transports, PATH-resolves stdio commands, flags common mistakes, and can probe remote servers. Zero dependencies.",
+  "type": "module",
+  "bin": {
+    "mcp-doctor": "bin.js"
+  },
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "bin.js",
+    "src/",
+    "examples/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node bin.js",
+    "test": "node test/run.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "cli",
+    "validator",
+    "doctor",
+    "linter",
+    "ai-agents",
+    "claude",
+    "claude-desktop",
+    "cursor",
+    "config",
+    "diagnostics"
+  ],
+  "homepage": "https://alfe.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlfeAI/mcp-doctor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AlfeAI/mcp-doctor/issues"
+  },
+  "author": "Alfe (https://alfe.ai)",
+  "license": "MIT"
+}

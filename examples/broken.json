@@ -1,0 +1,39 @@
+{
+  "mcpServers": {
+    "no-command": {
+      "args": ["--flag"]
+    },
+    "empty-args": {
+      "command": "uvx",
+      "args": []
+    },
+    "bad-transport": {
+      "type": "websocket",
+      "command": "node",
+      "args": 42
+    },
+    "needs-token": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      }
+    },
+    "bad-url": {
+      "url": "ftp://not-a-web-url/mcp"
+    },
+    "both": {
+      "command": "npx",
+      "args": ["server"],
+      "url": "https://example.com/mcp"
+    },
+    "dupe": {
+      "command": "node",
+      "args": ["a.js"]
+    },
+    "dupe": {
+      "command": "node",
+      "args": ["b.js"]
+    }
+  }
+}
