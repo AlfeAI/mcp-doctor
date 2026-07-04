@@ -5,13 +5,13 @@
 Zero dependencies. Runs anywhere Node 18+ runs. No install required.
 
 ```bash
-npx mcpdoctor
+npx @alfe.ai/mcp-doctor
 ```
 
-[![npm](https://img.shields.io/npm/v/mcpdoctor)](https://www.npmjs.com/package/mcpdoctor)
+[![npm](https://img.shields.io/npm/v/@alfe.ai/mcp-doctor)](https://www.npmjs.com/package/@alfe.ai/mcp-doctor)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 
-> On npm the package is **`mcpdoctor`** (the `mcp-doctor` name was already taken). The command it installs is still **`mcp-doctor`**, with `mcpdoctor` as an alias — so `npx mcpdoctor` and a global `mcp-doctor` both work.
+> On npm the package is **`@alfe.ai/mcp-doctor`** (the unscoped `mcp-doctor` name was taken). It installs an **`mcp-doctor`** command (with `mcpdoctor` as an alias) — so `npx @alfe.ai/mcp-doctor` runs it, and a global install gives you `mcp-doctor`.
 
 ---
 
@@ -25,16 +25,16 @@ MCP config files are hand-edited JSON, and the failure modes are miserable: a tr
 
 ```bash
 # Auto-discover your config (Claude Desktop, Claude Code, Cursor, VS Code, Windsurf, ./mcp.json ...)
-npx mcpdoctor
+npx @alfe.ai/mcp-doctor
 
 # Point it at a specific file
-npx mcpdoctor ~/Library/Application\ Support/Claude/claude_desktop_config.json
+npx @alfe.ai/mcp-doctor ~/Library/Application\ Support/Claude/claude_desktop_config.json
 
 # Also reachability-check remote server URLs
-npx mcpdoctor ./mcp.json --probe
+npx @alfe.ai/mcp-doctor ./mcp.json --probe
 
 # Machine-readable output for CI
-npx mcpdoctor ./mcp.json --json
+npx @alfe.ai/mcp-doctor ./mcp.json --json
 ```
 
 ## Example output
@@ -107,7 +107,7 @@ Exit code is non-zero when errors are found, so you can drop it straight into a 
 
 ## Where it looks
 
-Run `npx mcpdoctor --list` to see the exact paths for your OS. It covers:
+Run `npx @alfe.ai/mcp-doctor --list` to see the exact paths for your OS. It covers:
 
 - **Claude Desktop** — `claude_desktop_config.json` (macOS / Windows / Linux)
 - **Claude Code** — `.mcp.json` (project) and `~/.claude.json` (user)
@@ -120,7 +120,7 @@ Run `npx mcpdoctor --list` to see the exact paths for your OS. It covers:
 
 ```yaml
 # .github/workflows/mcp.yml
-- run: npx mcpdoctor ./.mcp.json --json
+- run: npx @alfe.ai/mcp-doctor ./.mcp.json --json
 ```
 
 `mcp-doctor` exits `1` on errors and `2` on usage/parse failures, so a broken config fails the job.
@@ -128,7 +128,7 @@ Run `npx mcpdoctor --list` to see the exact paths for your OS. It covers:
 ## Programmatic use
 
 ```js
-import { validateConfig } from 'mcpdoctor';
+import { validateConfig } from '@alfe.ai/mcp-doctor';
 
 const result = validateConfig(JSON.parse(configText));
 console.log(result.counts); // { ok, warn, error }

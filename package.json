@@ -1,6 +1,9 @@
 {
-  "name": "mcpdoctor",
+  "name": "@alfe.ai/mcp-doctor",
   "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Diagnose Model Context Protocol (MCP) server config files — validates Claude Desktop, Claude Code, Cursor, VS Code, Windsurf and generic mcp.json files, checks transports, PATH-resolves stdio commands, flags common mistakes, and can probe remote servers. Zero dependencies.",
   "type": "module",
   "bin": {
